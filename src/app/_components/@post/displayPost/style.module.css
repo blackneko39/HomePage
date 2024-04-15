@@ -1,0 +1,63 @@
+.main {
+    width: 100vw;
+    min-height: 95vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.head {
+    text-align: center;
+    margin: 5% 0;
+}
+
+.space {
+    background-color: #EFEFEF;
+}
+
+.article {
+    padding: 8px;
+}
+
+.border {
+    margin: 32px 0;
+}
+
+@media screen and (min-width: 767px) {
+    .space {
+        width: 25%;
+        padding: 0.5rem;
+    }
+    
+    .article {
+        width: 50%;
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 766px) {
+    .space {
+        width: 5%;
+    }
+    
+    .article {
+        width: 90%;
+    }
+}
+
+.content {
+    padding: 8px;
+}
+
+.content pre {
+    overflow-x: auto;
+    padding: 1rem 0;
+    border-radius: 4px;
+}
+
+.content pre [data-line] {
+    padding: 0 1rem;
+}
+
+.back {
+    padding-bottom: 5vh;
+}

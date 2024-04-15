@@ -1,0 +1,101 @@
+$res-pc: 767px;
+$res-sm: 766px;
+
+$wt: #fefefe;
+$bl: #111;
+
+.top {
+  position: relative;
+  width: 100vw;
+  height: 90vh;
+  background-color: ($bl);
+  @media screen and (max-width: ($res-sm)) {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  & .top-comp01 {
+    @media screen and (max-width: ($res-sm)) {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      height: 50%;
+    }
+
+
+    & .top-img {
+      @media screen and (min-width: ($res-pc)) {
+        position: relative;
+      }
+      @media screen and (max-width: ($res-sm)) {
+        position: absolute;
+        width: 120%;
+        height: 100%;
+        bottom: 0;
+      }
+
+
+      & #img {
+        @media screen and (min-width: ($res-pc)) {
+          width: 100vw;
+          height: 90vh;
+        }
+        @media screen and (max-width: ($res-sm)) {
+          width: 100%;
+          height: 100%;
+          margin: auto;
+          z-index: 100;
+        }
+
+
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+
+  & .top-comp02 {
+    @media screen and (min-width: ($res-pc)) {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      z-index: 100;
+    }
+    @media screen and (max-width: ($res-sm)) {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      height: 50%;
+      border: ($bl);
+    }
+
+
+    & .top-greeting {
+      @media screen and (min-width: ($res-pc)) {
+        position: absolute;
+        width: 30%;
+        height: 30%;
+        right: 0;
+        padding: 10% 0;
+        background-color: ($bl);
+      }
+
+
+      & #greeting {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        color: ($wt);
+        font-size: 35px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align: left;
+        letter-spacing: 6.5px;
+        margin: 0 4px;
+      }
+    }
+  }
+}

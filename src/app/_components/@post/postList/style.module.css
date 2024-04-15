@@ -1,0 +1,59 @@
+.main {
+    width: 100vw;
+    min-height: 95vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.tap {
+    height: 90%;
+    width: 100%;
+    padding: 24px 0;
+}
+.tap:hover {
+    background-color: lightgray;
+    border-radius: 2px;
+}
+.title {
+    border-bottom: 1px solid lightgray;
+    margin: 0;
+    padding-top: 6%;
+}
+
+@media screen and (min-width: 767px) {
+    .space {
+        width: 25%;
+    }
+    
+    .article {
+        width: 50%;
+    }
+
+    .title {
+        padding-bottom: 1.5%;
+    }
+}
+
+@media screen and (max-width: 766px) {
+    .space {
+        width: 5%;
+    }
+    
+    .article {
+        width: 90%;
+    }
+
+    .title {
+        padding-bottom: 3%;
+    }
+}
+
+.section {
+    border-bottom: 1px solid lightgray;
+    padding: 8px 0;
+}
