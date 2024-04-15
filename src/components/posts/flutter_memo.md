@@ -460,4 +460,5 @@ class DetailPage extends ConsumerWidget {
   }
 }
 ```
+
 (執筆中)
