@@ -10,14 +10,16 @@ $bl: #111;
   .txt-list {
     position: absolute;
     margin: auto;
-    width: 100vw;
+    padding: 0;
+    width: 100%;
+    height: auto;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     list-style: none;
 
     .txt {
-      margin: 8px;
+      margin: 8px 0;
       color: ($wt);
       text-align: center;
     }
