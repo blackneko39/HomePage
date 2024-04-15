@@ -2,8 +2,14 @@
 title: "Next.js 14(App router)でホームページ制作"
 date: "2023-03-18"
 ---
+
 こんにちは。木下亮佑です。
+
 今回はNext.jsでホームページを制作したので、そのソースコードと簡単な説明をします。
+
+ホームページのソースコード
+
+> [GitHub - HomePage](https://github.com/blackneko39/HomePage)
 
 ---
 

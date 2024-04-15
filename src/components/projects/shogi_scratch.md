@@ -5,6 +5,8 @@ date: "2023-04-15"
 
 # 将棋 on Scratch PCNプロコン2017夏 受賞作
 
+![shogi_picture](/pj_shogi.png)
+
 作品はこちら
 
 > [Scratch - 将棋](https://scratch.mit.edu/projects/170839753/)

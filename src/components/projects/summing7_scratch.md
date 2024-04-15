@@ -5,6 +5,8 @@ date: "2023-04-15"
 
 # Summing 7 on Scratch PCNプロコン2017冬 受賞作
 
+![Summing7](/pj_summing7.png)
+
 作品はこちら
 
 > [Scratch - Summing 7](https://scratch.mit.edu/projects/195832525/)
