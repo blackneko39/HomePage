@@ -5,16 +5,25 @@ $bl: #111;
   position: relative;
   width: 100vw;
   height: 10vh;
-  color: ($wt);
   background-color: ($bl);
 
-  #copyright {
-    width: 100vw;
-    text-align: center;
-    margin: 0;
+  .txt-list {
     position: absolute;
+    margin: auto;
+    width: 100vw;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    list-style: none;
+
+    .txt {
+      margin: 8px;
+      color: ($wt);
+      text-align: center;
+    }
+
+    .txt-link {
+      color: ($wt);
+    }
   }
 }

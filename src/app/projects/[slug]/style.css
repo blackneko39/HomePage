@@ -1,3 +1,8 @@
+a {
+    text-decoration: underline;
+    color: black;
+}
+
 pre {
     overflow-x: auto;
     padding: 1rem 0;
@@ -7,4 +12,9 @@ pre {
 
 pre [data-line] {
     padding: 0 1rem;
+}
+
+img {
+    width: 80%;
+    border: 0.2px solid #111;
 }

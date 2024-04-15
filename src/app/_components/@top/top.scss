@@ -15,7 +15,7 @@ $bl: #111;
   }
 
 
-  & .top-comp01 {
+  .top-comp01 {
     @media screen and (max-width: ($res-sm)) {
       position: relative;
       display: inline-block;
@@ -24,7 +24,7 @@ $bl: #111;
     }
 
 
-    & .top-img {
+    .top-img {
       @media screen and (min-width: ($res-pc)) {
         position: relative;
       }
@@ -55,7 +55,7 @@ $bl: #111;
     }
   }
 
-  & .top-comp02 {
+  .top-comp02 {
     @media screen and (min-width: ($res-pc)) {
       position: absolute;
       width: 100%;
@@ -72,7 +72,7 @@ $bl: #111;
     }
 
 
-    & .top-greeting {
+    .top-greeting {
       @media screen and (min-width: ($res-pc)) {
         position: absolute;
         width: 30%;
@@ -83,7 +83,7 @@ $bl: #111;
       }
 
 
-      & #greeting {
+      #greeting {
         position: absolute;
         left: 50%;
         top: 50%;
