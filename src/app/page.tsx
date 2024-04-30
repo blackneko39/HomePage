@@ -1,5 +1,5 @@
-import Top from './_components/@top/top';
-import Intro from './_components/@intro/intro';
+import Top from '../components/@top/top';
+import Intro from '../components/@intro/intro';
 
 export default function Page() {
     return (<>

@@ -9,7 +9,7 @@ import rehypeStringify from 'rehype-stringify';
 import PostDetail from './class/PostDetail';
 import Post from './class/Post';
 
-const componentsDirectory = path.join(process.cwd(), '/src/components');
+const componentsDirectory = path.join(process.cwd(), '/src/data');
 
 function extractMdFile(fileNames: string[]) {
   return fileNames.filter(fn => fn.indexOf(".md") != -1);

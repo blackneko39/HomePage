@@ -1,0 +1,34 @@
+{
+    "routes": [
+        {
+            "key": "routes-home",
+            "displayName": "Home",
+            "path" : "/"
+        },
+        {
+            "key": "routes-profile",
+            "displayName": "Profile",
+            "path" : "/profile"
+        },
+        {
+            "key": "routes-history",
+            "displayName": "History",
+            "path" : "/history"
+        },
+        {
+            "key": "routes-ability",
+            "displayName": "Ability",
+            "path" : "/ability"
+        },
+        {
+            "key": "routes-projects",
+            "displayName": "Projects",
+            "path" : "/projects"
+        },
+        {
+            "key": "routes-posts",
+            "displayName": "Posts",
+            "path" : "/posts"
+        }
+    ]
+}

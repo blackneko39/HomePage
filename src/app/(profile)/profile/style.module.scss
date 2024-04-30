@@ -1,0 +1,58 @@
+$res-pc: 767px;
+$res-sm: 766px;
+
+.main {
+    position: relative;
+    width: 100vw;
+    min-height: 90vh;
+}
+
+.article {
+    position: relative;
+    height: 90vh;
+    margin: auto;
+    text-align: center;
+    @media screen and (min-width: $res-pc) {
+        width: 30%;
+    }
+
+    @media screen and (max-width: $res-sm) {
+        width: 90%;
+    }
+}
+
+.profile {
+    position: relative;
+    top: 40%;
+    transform: translateY(-40%);
+    margin: auto;
+}
+
+.top {
+    padding: 32px;
+    padding-bottom: 8px;
+}
+
+.name {
+    font-size: larger;
+    margin: 0;
+    margin-top: 8px;
+}
+
+.img {
+    width:168px;
+    height:168px;
+    border-radius:50%;
+    object-fit: cover;
+}
+
+.ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.li {
+    list-style: none;
+    padding: 8px;
+}

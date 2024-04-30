@@ -1,0 +1,39 @@
+$res-pc: 767px;
+$res-sm: 766px;
+
+.menu {
+    position: fixed;
+    min-width: 30%;
+    max-width: 50%;
+    top: 100%;
+    right: 0;
+    background-color: #0a0a0a;
+}
+
+.ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.li {
+    margin-left: 48px;
+    list-style: circle;
+    color: white;
+    border-bottom: 1px #222 solid;
+}
+
+.link {
+    font-size: large;
+    color: white;
+}
+
+.wrap {
+    
+    @media screen and (min-width: ($res-pc)) {
+        padding: 32px 32px;
+    }
+    
+    @media screen and (max-width: ($res-sm)) {
+        padding: 18px 18px;
+    }
+}

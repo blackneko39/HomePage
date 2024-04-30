@@ -1,12 +1,10 @@
 $blk: #252525;
-
 html {
   overflow-x: hidden;
   overflow-y: scroll; -webkit-overflow-scrolling: touch
 }
 
 body {
-  margin: 0;
   background-color: hsl(0, 0%, 100%);
   overflow-x: hidden;
   margin: 0;
@@ -26,4 +24,34 @@ code {
 
 main {
   margin-top: 10vh;
+}
+
+h1 {
+  font-size: xx-large;
+}
+
+h2 {
+  font-size: x-large;
+}
+
+h3 {
+  font-size: large;
+}
+
+a {
+  color: $blk;
+  text-decoration: none;
+}
+
+p {
+  font-size: medium;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
 }

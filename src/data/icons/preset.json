@@ -1,0 +1,20 @@
+{
+    "html": {
+        "color": "#9BBD1C"
+    },
+    "css": {
+        "color": "#9BBD1C"
+    },
+    "js": {
+        "color": "#F8C301"
+    },
+    "java": {
+        "color": "#F8C301"
+    },
+    "dart": {
+        "color": "#F8C301"
+    },
+    "rust": {
+        "color": "#FB7103"
+    }
+}

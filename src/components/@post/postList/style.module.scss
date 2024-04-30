@@ -1,0 +1,78 @@
+.main {
+    width: 100vw;
+    min-height: 95vh;
+    display: flex;
+    flex-direction: row;
+
+    .article {
+        .title {
+            width: 100%;
+            border: 0;
+            border-bottom: 1px solid lightgray;
+            margin: 0;
+            padding-top: 6%;
+            font-size: 1.5em;
+        }
+        .section {
+            border-bottom: 1px solid lightgray;
+            padding: 8px 0;
+
+            .link {
+                text-decoration: none;
+                color: black;
+            }
+            
+            .post {
+                text-align: left;
+                height: 90%;
+                width: 100%;
+                padding: 24px 0;
+
+                .postTitle {
+                    margin: 12px 0;
+                    font-size: 20px;
+                    padding: 0;
+                    border: 0;
+                    text-align: left;
+                }
+                .postDate {
+                    margin: 12px 0;
+                    font-size: 16px;
+                }
+            }
+            .post:hover {
+                background-color: lightgray;
+                border-radius: 2px;
+            }
+        }
+    }
+
+    @media screen and (min-width: 767px) {
+        .space {
+            width: 25%;
+        }
+        
+        .article {
+            width: 50%;
+
+            .title {
+                padding-bottom: 1.5%;
+            }
+        }
+    }
+
+    @media screen and (max-width: 766px) {
+        .space {
+            width: 5%;
+        }
+        
+        .article {
+            width: 90%;
+            
+            .title {
+                padding-bottom: 3%;
+            }
+        }
+    }
+    
+}

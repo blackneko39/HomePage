@@ -1,0 +1,69 @@
+$res-pc: 767px;
+$res-sm: 766px;
+
+$wt: #fefefe;
+$bl: #111;
+
+$size: 24px;
+
+.hamburger {
+    position: relative;
+    width: $size;
+    height: $size;
+    padding: 8px;
+}
+
+.hamburger ~ .checkbox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.icon {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.line {
+    background-color: black;
+    width: $size;
+    height: 1px;
+    margin: $size/5 0;
+
+    @media screen and (min-width: ($res-pc)) {
+        background-color: $bl;
+    }
+    
+    @media screen and (max-width: ($res-sm)) {
+        background-color: $wt;
+    }
+}
+
+.checkbox {
+    color: black;
+}
+
+.menu {
+    position: absolute;
+    z-index: -1;
+}
+
+.checkbox {
+    opacity: 0;
+}
+
+.menu {
+    visibility: hidden;
+}
+
+
+.checkbox:checked {
+    ~ .menu {
+        visibility: visible;
+    }
+}
