@@ -1,6 +1,6 @@
 ---
 title: "flutterでメモアプリ、iOS/Android同時開発"
-date: "2023-04-06"
+date: "2024-04-06"
 ---
 # Flutterでメモアプリ、iOS/Android同時開発
 
@@ -232,9 +232,11 @@ class MemoNotifier extends StateNotifier<List<Memo>> {
 }
 ```
 
-RiverPod パッケージを使い、リストを監視することで、値が更新された時にウィジェットを再描画できます。
+**[RiverPod](https://pub.dev/packages/riverpod)** パッケージのStateNotifierを利用し、リストの値を監視することで、値が更新された時にウィジェットを再描画できます。
 
-これをしないと再描画されないため、新しくメモを追加してもリストには表示されません。
+Flutterの仕様上、たとえリストの値が更新されてもウィジェットは再描画されないため、リアルタイムに追加したメモを表示することができません。
+
+しかし、StateNotifierを使うことでリアルタイム更新が可能となります。
 
 ---
 
@@ -323,6 +325,72 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
 }
 ```
 
+アプリの根幹部分です。
+
+「アプリを落とした際にメモが消えないよう一時保存しておく処理」を実現するために、オブザーバを設定しています。
+
+```dart 
+class _HomePageState extends ... with WidgetsBindingObserver {
+  ...
+}
+```
+
+initState()にてオブザーバを追加
+
+```dart
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+    initData();
+  }
+```
+
+またdispose()にそのオブザーバを削除する処理も追加しています。
+
+```dart
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+```
+
+そして、そのオブザーバがアプリの挙動を感知した際に、didChangeAppLifecycleState()が実行されます。
+
+アプリがバックグラウンドに行った際に、テキストフィールドにあるテキストを自動保存するようにしています。
+
+保存するのは単一のデータのため、テーブルは使用しません。
+
+代わりに **[SharedPreferences](https://pub.dev/packages/shared_preferences)** を使い、ローカルに保存しておきます。
+
+```dart
+  @override
+  Future<void> didChangeAppLifecycleState(AppLifecycleState state) async {
+    log(state.name);
+    switch (state) {
+      case AppLifecycleState.inactive:
+
+        final prefs = await SharedPreferences.getInstance();
+        if (textController.value.text.isNotEmpty) {
+          await prefs.setString('stored', textController.value.text);
+        }
+
+        break;
+      case AppLifecycleState.paused:
+        break;
+      case AppLifecycleState.resumed:
+        break;
+      case AppLifecycleState.detached:
+        break;
+      case AppLifecycleState.hidden:
+        break;
+    }
+  }
+```
+
+---
+
 ## Writer Page
 
 ```dart
@@ -395,6 +463,62 @@ class WriterPage extends ConsumerWidget {
 }
 ```
 
+画面上に巨大なテキストフィールドと送信ボタンを表示します。
+
+少々複雑ですが、やっていることは基本的に「書いたメモを保存する」だけです。
+
+```dart
+  Future<void> clear() async {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.clear();
+    textController.clear();
+  }
+```
+
+メモを消去する際に **[SharedPreferences](https://pub.dev/packages/shared_preferences)** に保存されたデータも削除しています。
+
+```dart
+  String _normalizeText(String text) {
+    String str = text.trim();
+    str = str.replaceAll(RegExp(r'\n(\n)+'), '\n\n');
+    return str;
+  }
+```
+
+メモを作成する際にテキストを整えます。
+
+具体的にはtrim()で無駄な空白を無くし、replaceAll()で改行を2つまでに制限しています。
+
+```dart
+  Memo _makeMemo(String text) {
+    Memo memo = Memo(id: UniqueKey().toString(), text: text, date: DateTime.now().toUtc().toIso8601String());
+    return memo;
+  }
+```
+
+メモのインスタンスを作成し返却します。idはユニークにし被らないようにします。
+
+dateには作成した時間を入れています。
+
+```dart
+    ...
+    onPressed: () {
+      String text = _normalizeText(textController.value.text);
+      if (text.isNotEmpty) {
+        ref.watch(memoNotifier.notifier)
+            .addMemo(memo: _makeMemo(text));
+        clear();
+      }
+    },
+    ...
+```
+
+送信ボタンが押された時にメモを作成し **[RiverPod](https://pub.dev/packages/riverpod)** のStateNotiferに値の変更を知らせます。
+
+こうすることで値の変更を感知し、ウィジェットを再描画することでリアルタイムにリストを更新することができます。
+
+---
+
 ## ListUp Page
 
 ```dart
@@ -440,6 +564,54 @@ class ListUpPage extends ConsumerWidget {
 }
 ```
 
+メモをリストアップします。
+
+```dart
+  Future<void> _wait() async {
+    Future.delayed(const Duration(milliseconds: 500));
+  }
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final reversedList = ref.watch(memoNotifier).reversed;
+    return FutureBuilder(
+        future: _wait(),
+        ...
+```
+
+描画する際、値がまだ更新できていないとエラーが発生するため、0.5秒の遅延を与えています。
+
+```dart
+    return ListView.builder(
+        itemCount: reversedList.length,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 20.0, horizontal: 50.0),
+                    child: Text(reversedList.elementAt(index).text),
+                  ),
+                  const Divider(),
+                ]
+              ),
+              onTap: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context)
+                      => DetailPage(memo: reversedList.elementAt(index))
+                ));
+              },
+          );
+        },
+```
+
+ListView.builderを使い、メモを並べます。
+
+並べられているメモがタップされた際に、詳細ページに遷移させます。
+
+---
+
 ## Detail Page
 
 ```dart
@@ -465,4 +637,10 @@ class DetailPage extends ConsumerWidget {
 }
 ```
 
-(執筆中)
+詳細ページです。
+
+メモのインスタンスに入っている変数の名前とその値を表示させています。
+
+具体的にいうと **id, text(メモの文章), date(書いた日付)** になります。
+
+簡潔な説明にはなりますが、以上となります。ご覧いただきありがとうございました。

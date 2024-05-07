@@ -1,7 +1,7 @@
 import { getAllPostsSlugs, getPostTitle } from "@/lib/postsGetter";
 import DisplayPost from "@/components/@post/displayPost/displayPost";
 
-import "./style.css"
+import "./style.scss"
 
 const dn: string = 'projects';
 
@@ -17,7 +17,9 @@ export async function generateStaticParams() {
 export default function Page({ params }: { params: { slug: string } }) { 
 	const slug = params.slug;
 
-	return (<>
-		<DisplayPost dn={dn} slug={slug}/>
-	</>);
+	return (
+		<div className="display-port">
+			<DisplayPost dn={dn} slug={slug}/>
+		</div>
+	);
 }

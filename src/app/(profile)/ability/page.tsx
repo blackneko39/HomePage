@@ -5,11 +5,7 @@ export default function Page() {
     return(<>
     <main className='intro'>
         <article className='intro-content'>
-            <section>
-                <div>
-                    資格：
-                </div>
-            </section>
+            <AbiTxt />
         </article>
     </main>
         

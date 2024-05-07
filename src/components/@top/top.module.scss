@@ -15,7 +15,7 @@ $bl: #111;
   }
 
 
-  .top-comp01 {
+  .comp1 {
     @media screen and (max-width: ($res-sm)) {
       position: relative;
       display: inline-block;
@@ -24,7 +24,7 @@ $bl: #111;
     }
 
 
-    .top-img {
+    .img {
       @media screen and (min-width: ($res-pc)) {
         position: relative;
       }
@@ -36,7 +36,7 @@ $bl: #111;
       }
 
 
-      & #img {
+      & #ryosuke {
         @media screen and (min-width: ($res-pc)) {
           width: 100vw;
           height: 90vh;
@@ -55,7 +55,7 @@ $bl: #111;
     }
   }
 
-  .top-comp02 {
+  .comp2 {
     @media screen and (min-width: ($res-pc)) {
       position: absolute;
       width: 100%;
@@ -72,7 +72,7 @@ $bl: #111;
     }
 
 
-    .top-greeting {
+    .greeting {
       @media screen and (min-width: ($res-pc)) {
         position: absolute;
         width: 30%;
@@ -83,7 +83,7 @@ $bl: #111;
       }
 
 
-      #greeting {
+       .txt {
         position: absolute;
         left: 50%;
         top: 50%;

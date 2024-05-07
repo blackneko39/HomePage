@@ -1,6 +1,6 @@
 ---
-title: "将棋 on Scratch PCNプロコン2017夏 受賞作"
-date: "2023-04-15"
+title: "PCNプロコン2017夏 受賞作"
+date: "2024-04-15"
 ---
 
 # 将棋 on Scratch

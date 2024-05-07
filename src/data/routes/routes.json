@@ -2,33 +2,38 @@
     "routes": [
         {
             "key": "routes-home",
-            "displayName": "Home",
+            "displayName": "Home / ホーム",
             "path" : "/"
         },
         {
             "key": "routes-profile",
-            "displayName": "Profile",
+            "displayName": "Profile / プロフィール",
             "path" : "/profile"
         },
         {
             "key": "routes-history",
-            "displayName": "History",
+            "displayName": "History / 経歴",
             "path" : "/history"
         },
         {
             "key": "routes-ability",
-            "displayName": "Ability",
+            "displayName": "Ability / 能力",
             "path" : "/ability"
         },
         {
             "key": "routes-projects",
-            "displayName": "Projects",
+            "displayName": "Projects / 作品",
             "path" : "/projects"
         },
         {
             "key": "routes-posts",
-            "displayName": "Posts",
+            "displayName": "Posts / 投稿",
             "path" : "/posts"
+        },
+        {
+            "key": "routes-quali",
+            "displayName": "Qualification / 資格",
+            "path" : "/qualification"
         }
     ]
 }

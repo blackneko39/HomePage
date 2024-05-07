@@ -3,5 +3,5 @@
     "lastname": "Kinoshita",
     "img": "/me_small.jpg",
     "usual": ["HTML", "CSS", "JS", "Java", "Dart", "Rust", "Lua"],
-    "qualification": ["基本情報技術者"]
+    "quali": ["ITパスポート", "基本情報技術者"]
 }

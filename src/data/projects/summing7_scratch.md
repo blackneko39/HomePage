@@ -1,6 +1,6 @@
 ---
-title: "Summing 7 on Scratch PCNプロコン2017冬 受賞作"
-date: "2023-04-15"
+title: "PCNプロコン2017冬 受賞作"
+date: "2024-04-15"
 ---
 
 # Summing 7 on Scratch

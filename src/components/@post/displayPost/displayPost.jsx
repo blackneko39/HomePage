@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from './style.module.scss';
+import s from './style.module.scss';
 
 import { getPostData } from "@/lib/postsGetter";
 
@@ -9,29 +9,29 @@ export default function DisplayPost(props) {
 	const slug = props.slug;
 
 		return (<>
-			<main className={styles.main}>
-				<div className={styles.space}></div>
-				<article className={styles.article}>
+			<main className={s.main}>
+				<div className={s.space}></div>
+				<article className={s.article}>
 					{getPostData(dn, slug).then(post => {
 						return (<>
 
-							<section className={styles.head}>
-								<h1 className={styles.title}>{post.title}</h1>
-								<div className={styles.date}>{post.date}</div>
+							<section className={s.head}>
+								<h1 className={s.title}>{post.title}</h1>
+								<div className={s.date}>{post.date}</div>
 							</section>
-							<hr className={styles.border}></hr>
-							<section className={styles.content}>
+							<hr className={s.border}></hr>
+							<section className={s.content}>
 								<div dangerouslySetInnerHTML={{ __html: post.contentHtml }}></div>
 							</section>
-							<hr className={styles.border}></hr>
-							<section className={styles.back}>
+							<hr className={s.border}></hr>
+							<section className={s.back}>
 								<Link href={`/${dn}`}>Prev Page</Link>
 							</section>
 
 						</>);
 					})}
 				</article>
-				<div className={styles.space}></div>
+				<div className={s.space}></div>
 			</main>
 		</>);
 }

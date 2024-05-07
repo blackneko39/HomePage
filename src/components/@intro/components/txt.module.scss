@@ -1,0 +1,57 @@
+$res-pc: 767px;
+$res-sm: 766px;
+
+.comp {
+  h1 {
+    max-width: fit-content;
+    right: 0;
+    left: 0;
+    font-size: 48px;
+    margin: 30px auto;
+    @media screen and (min-width: ($res-pc)) {
+      padding: 10px 0;
+      border-top: 1px rgb(237, 237, 237) solid;
+      border-bottom: 1px rgb(237, 237, 237) solid;
+    }
+  }
+
+  .b {
+    font-weight: bold;
+  }
+
+
+  .section {
+    position: relative;
+    & h2 {
+      text-align: left;
+      font-size: 28px;
+    }
+
+    .item {
+      h3 {
+        text-align: left;
+        font-size: 18px;
+      }
+
+      h4 {
+        text-align: left;
+        font-size: 16px;
+      }
+
+      p {
+        text-align: left;
+        font-size: 16px;
+      }
+
+      ul li {
+        text-align: left;
+        font-size: 16px;
+      }
+
+      a {
+        color: #404040;
+        text-decoration: underline;
+      }
+    }
+  }
+}

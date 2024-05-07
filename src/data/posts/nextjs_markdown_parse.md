@@ -1,6 +1,6 @@
 ---
-title: "Next.js 14(App router)でMarkdownブログ制作"
-date: "2023-03-19"
+title: "Next.js 14でMarkdownブログ制作①"
+date: "2024-03-19"
 ---
 
 # Next.js 14でMarkdownブログ制作

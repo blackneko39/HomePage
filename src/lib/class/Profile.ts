@@ -3,13 +3,13 @@ export default class Profile {
     lastname: string;
     img: string;
     usual: string[];
-    qualification:  string[]
+    quali:  string[]
 
-    constructor(firstname: string, lastname: string, img: string, usual: string[], qualification: string[]) {
+    constructor(firstname: string, lastname: string, img: string, usual: string[], quali: string[]) {
       this.firstname = firstname;
       this.lastname = lastname;
       this.img = img;
       this.usual = usual;
-      this.qualification = qualification;
+      this.quali = quali;
     }
 }

@@ -46,13 +46,28 @@ $res-sm: 766px;
     object-fit: cover;
 }
 
-.ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+.usual {
+    margin-bottom: 10%;
+    .ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .li {
+            padding: 8px;
+        }
+    }
 }
 
-.li {
-    list-style: none;
-    padding: 8px;
+
+.quali {
+    .ul {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+
+        .li {
+            list-style: circle;
+        }
+    }
 }

@@ -13,5 +13,5 @@ export function getProfile(slug: string) {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const json = JSON.parse(fileContents);
     
-    return new Profile(json['firstname'], json['lastname'], json['img'], json['usual'], json['qualification']);
+    return new Profile(json['firstname'], json['lastname'], json['img'], json['usual'], json['quali']);
 }
